@@ -1,5 +1,12 @@
 import React from 'react';
+import { useAuth } from '../utils/context/authContext';
+import User from '../components/User';
 
 export default function Profile() {
-  return <div>profile here</div>;
+  const { user } = useAuth();
+  return (
+    <>
+      <User user={user} />
+    </>
+  );
 }
