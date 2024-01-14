@@ -1,7 +1,12 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
-export default function AuthorCard() {
+function AuthorCard() {
   return (
     <div>AuthorCard</div>
   );
 }
+
+AuthorCard.propTypes = {};
+
+export default AuthorCard;
