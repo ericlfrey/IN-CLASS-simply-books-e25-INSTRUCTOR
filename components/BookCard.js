@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
+import { CardFooter } from 'react-bootstrap';
 import { deleteBook } from '../api/bookData';
 
 function BookCard({ bookObj, onUpdate }) {
@@ -19,8 +20,11 @@ function BookCard({ bookObj, onUpdate }) {
       <Card.Img variant="top" src={bookObj.image} alt={bookObj.title} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{bookObj.title}</Card.Title>
-        <p className="card-text bold">{bookObj.sale && <span>SALE<br /></span> } ${bookObj.price}</p>
+        <p className="card-text bold">{bookObj.sale && <span>SALE<br /></span>} ${bookObj.price}</p>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
+
+      </Card.Body>
+      <CardFooter className="bg-white">
         <Link href={`/book/${bookObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
@@ -31,7 +35,7 @@ function BookCard({ bookObj, onUpdate }) {
         <Button variant="danger" onClick={deleteThisBook} className="m-2">
           DELETE
         </Button>
-      </Card.Body>
+      </CardFooter>
     </Card>
   );
 }
