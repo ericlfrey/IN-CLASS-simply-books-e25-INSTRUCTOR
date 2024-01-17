@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -15,7 +16,7 @@ export default function ViewAuthorPage() {
 
   useEffect(() => {
     viewTheAuthorDetails();
-  }, []);
+  }, [firebaseKey]);
   return (
     <>
       <div className="mt-5 d-flex flex-wrap">
