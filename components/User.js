@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { useAuth } from '../utils/context/authContext';
-// import PropTypes from 'prop-types';
 
 export default function User() {
-  const user = useAuth();
+  const { user } = useAuth();
+
   return (
     <>
       <img src={user.photoURL} alt="User Profile" style={{ width: '150px', borderRadius: '50%' }} />
@@ -14,14 +14,3 @@ export default function User() {
     </>
   );
 }
-
-// User.propTypes = {
-//   user: PropTypes.shape({
-//     displayName: PropTypes.string,
-//     email: PropTypes.string,
-//     metadata: PropTypes.shape({
-//       lastSignInTime: PropTypes.string,
-//     }),
-//     photoURL: PropTypes.string,
-//   }).isRequired,
-// };
