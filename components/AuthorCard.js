@@ -12,21 +12,23 @@ function AuthorCard({ authorObj, onUpdate }) {
   };
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
+      <Card.Img variant="top" src={authorObj.image} alt={authorObj.first_name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
-        <p className="card-text bold">{authorObj.favorite && <span>❤️ Favorite<br /></span>}</p>
-        {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
+        <Card.Title>{authorObj.first_name}</Card.Title>
+        <Card.Title>{authorObj.last_name}</Card.Title>
+      </Card.Body>
+      <Card.Footer className="bg-white">
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
+        {/* DYNAMIC LINK TO EDIT THE Author DETAILS  */}
         <Link href={`/author/edit/${authorObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisAuthor} className="m-2">
           DELETE
         </Button>
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 }
@@ -38,6 +40,7 @@ AuthorCard.propTypes = {
     favorite: PropTypes.bool,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
+    image: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
