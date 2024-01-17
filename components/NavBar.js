@@ -33,7 +33,6 @@ export default function NavBar() {
               <Nav.Link>Create Author</Nav.Link>
             </Link>
             <Link passHref href="/profile">
-              {/* <Nav.Link>Profile</Nav.Link> */}
               <img
                 src={user.photoURL}
                 alt="User"
