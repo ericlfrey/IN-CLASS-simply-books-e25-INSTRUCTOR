@@ -39,7 +39,7 @@ function AuthorForm({ authorObj }) {
       createAuthor(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateAuthor(patchPayload).then(() => {
-          router.push('/');
+          router.push('/authors');
         });
       });
     }
@@ -76,7 +76,7 @@ function AuthorForm({ authorObj }) {
       {/* Email  */}
       <FloatingLabel controlId="floatingInput1" label="Author Email" className="mb-3">
         <Form.Control
-          type="text"
+          type="email"
           placeholder="Enter an email"
           name="email"
           value={formInput.email}
