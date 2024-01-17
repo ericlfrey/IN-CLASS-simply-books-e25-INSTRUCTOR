@@ -25,7 +25,11 @@ function Home() {
       </Link>
       <div className="d-flex flex-wrap">
         {books.map((book) => (
-          <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllTheBooks} />
+          <BookCard
+            key={book.firebaseKey}
+            bookObj={book}
+            onUpdate={getAllTheBooks}
+          />
         ))}
       </div>
     </div>
